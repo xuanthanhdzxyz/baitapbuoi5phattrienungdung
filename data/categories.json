@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Lập trình Mobile",
+    "description": "Android, Flutter, React Native",
+    "id": "1"
+  },
+  {
+    "name": "Lập trình Web",
+    "description": "Frontend và Backend",
+    "id": "2"
+  },
+  {
+    "name": "Trí tuệ nhân tạo",
+    "description": "AI, Machine Learning, Deep Learning",
+    "id": "3"
+  }
+]

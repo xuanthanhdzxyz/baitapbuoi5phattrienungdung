@@ -1,0 +1,122 @@
+[
+  {
+    "title": "Lập trình Android cơ bản",
+    "description": "Xây dựng ứng dụng Android với Kotlin",
+    "categoryId": "1",
+    "instructor": "Nguyễn Văn A",
+    "price": 500000,
+    "duration": 30,
+    "thumbnail": "https://picsum.photos/400/300?random=1",
+    "trailerUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "createdAt": "2026-10-13",
+    "id": "1"
+  },
+  {
+    "title": "Lập trình Flutter",
+    "description": "Xây dựng ứng dụng đa nền tảng",
+    "categoryId": "1",
+    "instructor": "Trần Thị B",
+    "price": 700000,
+    "duration": 45,
+    "thumbnail": "https://picsum.photos/400/300?random=2",
+    "trailerUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "createdAt": "2026-10-14",
+    "id": "2"
+  },
+  {
+    "title": "React Native từ số 0",
+    "description": "Học React Native qua dự án thực tế",
+    "categoryId": "1",
+    "instructor": "Lê Văn C",
+    "price": 600000,
+    "duration": 35,
+    "thumbnail": "https://picsum.photos/400/300?random=3",
+    "trailerUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "createdAt": "2026-10-15",
+    "id": "3"
+  },
+  {
+    "title": "HTML/CSS/JS Cơ bản",
+    "description": "Nền tảng lập trình Web cho người mới",
+    "categoryId": "2",
+    "instructor": "Phạm Văn D",
+    "price": 300000,
+    "duration": 20,
+    "thumbnail": "https://picsum.photos/400/300?random=4",
+    "trailerUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "createdAt": "2026-10-16",
+    "id": "4"
+  },
+  {
+    "title": "Node.js và Express",
+    "description": "Xây dựng Backend API chuyên nghiệp",
+    "categoryId": "2",
+    "instructor": "Hoàng Thị E",
+    "price": 800000,
+    "duration": 50,
+    "thumbnail": "https://picsum.photos/400/300?random=5",
+    "trailerUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "createdAt": "2026-10-17",
+    "id": "5"
+  },
+  {
+    "title": "ReactJS Cơ bản đến Nâng cao",
+    "description": "Làm chủ thư viện UI phổ biến nhất",
+    "categoryId": "2",
+    "instructor": "Ngô Văn F",
+    "price": 750000,
+    "duration": 40,
+    "thumbnail": "https://picsum.photos/400/300?random=6",
+    "trailerUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "createdAt": "2026-10-18",
+    "id": "6"
+  },
+  {
+    "title": "Nhập môn Trí tuệ nhân tạo",
+    "description": "Tổng quan về AI và các ứng dụng",
+    "categoryId": "3",
+    "instructor": "Đỗ Thị G",
+    "price": 1000000,
+    "duration": 60,
+    "thumbnail": "https://picsum.photos/400/300?random=7",
+    "trailerUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "createdAt": "2026-10-19",
+    "id": "7"
+  },
+  {
+    "title": "Machine Learning cơ bản",
+    "description": "Thuật toán ML với Python",
+    "categoryId": "3",
+    "instructor": "Vũ Văn H",
+    "price": 1200000,
+    "duration": 70,
+    "thumbnail": "https://picsum.photos/400/300?random=8",
+    "trailerUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "createdAt": "2026-10-20",
+    "id": "8"
+  },
+  {
+    "title": "Deep Learning với TensorFlow",
+    "description": "Mạng nơ-ron và ứng dụng thực tế",
+    "categoryId": "3",
+    "instructor": "Bùi Thị I",
+    "price": 1500000,
+    "duration": 80,
+    "thumbnail": "https://picsum.photos/400/300?random=9",
+    "trailerUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "createdAt": "2026-10-21",
+    "id": "9"
+  },
+  {
+    "title": "Computer Vision",
+    "description": "Xử lý ảnh và video với AI",
+    "categoryId": "3",
+    "instructor": "Nguyễn Văn K",
+    "price": 1100000,
+    "duration": 55,
+    "thumbnail": "https://picsum.photos/400/300?random=10",
+    "trailerUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "createdAt": "2026-10-22",
+    "id": "10"
+  }
+]
