@@ -1,6 +1,112 @@
 import React, { useState } from "react";
-import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import {
+  Modal,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from "react-native";
 import { Image } from "expo-image";
+
+export function CategorySelect({
+  label,
+  value,
+  options,
+  placeholder,
+  onChange,
+}: {
+  label: string;
+  value: string;
+  options: { id: string; name: string }[];
+  placeholder: string;
+  onChange: (id: string) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const choices = [{ id: "", name: placeholder }, ...options];
+  const selected =
+    choices.find((option) => option.id === value)?.name || placeholder;
+  return (
+    <>
+      <Pressable
+        accessibilityRole="button"
+        accessibilityLabel={label}
+        accessibilityValue={{ text: selected }}
+        accessibilityState={{ expanded: open }}
+        onPress={() => setOpen(true)}
+        style={[
+          s.input,
+          {
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: 12,
+          },
+        ]}
+      >
+        <Text
+          numberOfLines={1}
+          style={{ flex: 1, color: "#193e4c", fontSize: 16 }}
+        >
+          {selected}
+        </Text>
+        <Text style={{ color: "#147d73" }}>▾</Text>
+      </Pressable>
+      <Modal
+        visible={open}
+        transparent
+        animationType="fade"
+        onRequestClose={() => setOpen(false)}
+      >
+        <View style={s.overlay}>
+          <View
+            accessibilityViewIsModal
+            style={[s.dialog, { maxHeight: "75%" }]}
+          >
+            <Text accessibilityRole="header" style={s.heading}>
+              {label}
+            </Text>
+            <ScrollView
+              keyboardShouldPersistTaps="handled"
+              contentContainerStyle={{ gap: 8 }}
+            >
+              {choices.map((option) => (
+                <Pressable
+                  key={option.id}
+                  accessibilityRole="radio"
+                  accessibilityState={{ checked: value === option.id }}
+                  onPress={() => {
+                    onChange(option.id);
+                    setOpen(false);
+                  }}
+                  style={{
+                    minHeight: 48,
+                    borderRadius: 10,
+                    padding: 14,
+                    backgroundColor:
+                      value === option.id ? "#e0f3e9" : "#f5f7f8",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    gap: 12,
+                  }}
+                >
+                  <Text style={{ flex: 1, color: "#193e4c", fontSize: 16 }}>
+                    {option.name}
+                  </Text>
+                  {value === option.id && (
+                    <Text style={{ color: "#147d73" }}>✓</Text>
+                  )}
+                </Pressable>
+              ))}
+            </ScrollView>
+            <Button title="Đóng" secondary onPress={() => setOpen(false)} />
+          </View>
+        </View>
+      </Modal>
+    </>
+  );
+}
 
 export function Button({
   title,

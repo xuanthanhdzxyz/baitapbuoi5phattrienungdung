@@ -20,7 +20,6 @@ import {
 } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
-import { Picker } from "@react-native-picker/picker";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useEvent } from "expo";
 import { useVideoPlayer, VideoView } from "expo-video";
@@ -37,7 +36,7 @@ import {
   toCourseInput,
   validateCourse,
 } from "./domain";
-import { Button, Cover, Field, s } from "./ui";
+import { Button, CategorySelect, Cover, Field, s } from "./ui";
 
 const DEFAULT_API =
   process.env.EXPO_PUBLIC_API_BASE_URL ||
@@ -119,6 +118,10 @@ function CourseApp() {
   const [notice, setNotice] = useState("");
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState("");
+  const listRef = useRef<FlatList<Course>>(null);
+  useEffect(() => {
+    listRef.current?.scrollToOffset({ offset: 0, animated: false });
+  }, [query, filter]);
   const [selected, setSelected] = useState<Course | null>(null);
   const [detailLoading, setDetailLoading] = useState(false);
   const [detailError, setDetailError] = useState("");
@@ -403,23 +406,20 @@ function CourseApp() {
                   value={query}
                   onChangeText={setQuery}
                 />
-                <View style={s.picker}>
-                  <Picker
-                    accessibilityLabel="Lọc theo danh mục"
-                    selectedValue={filter}
-                    onValueChange={setFilter}
-                  >
-                    <Picker.Item label="Tất cả danh mục" value="" />
-                    {categories.map((c) => (
-                      <Picker.Item key={c.id} label={c.name} value={c.id} />
-                    ))}
-                  </Picker>
-                </View>
+                <CategorySelect
+                  label="Lọc theo danh mục"
+                  value={filter}
+                  onChange={setFilter}
+                  options={categories}
+                  placeholder="Tất cả danh mục"
+                />
               </View>
               <Text style={s.result}>
                 {shown.length} khóa học · {categories.length} danh mục
               </Text>
               <FlatList
+                ref={listRef}
+                style={s.flex}
                 data={shown}
                 keyExtractor={(c) => c.id}
                 refreshing={loading}
@@ -574,20 +574,13 @@ function CourseApp() {
               ))}
               <View style={s.field}>
                 <Text style={s.label}>Danh mục *</Text>
-                <View style={s.picker}>
-                  <Picker
-                    accessibilityLabel="Danh mục khóa học"
-                    selectedValue={draft.categoryId}
-                    onValueChange={(v) =>
-                      setDraft((d) => ({ ...d, categoryId: v }))
-                    }
-                  >
-                    <Picker.Item label="Chọn danh mục" value="" />
-                    {categories.map((c) => (
-                      <Picker.Item key={c.id} label={c.name} value={c.id} />
-                    ))}
-                  </Picker>
-                </View>
+                <CategorySelect
+                  label="Danh mục khóa học"
+                  value={draft.categoryId}
+                  onChange={(v) => setDraft((d) => ({ ...d, categoryId: v }))}
+                  options={categories}
+                  placeholder="Chọn danh mục"
+                />
                 {!!formErrors.categoryId && (
                   <Text style={s.errorText}>{formErrors.categoryId}</Text>
                 )}
