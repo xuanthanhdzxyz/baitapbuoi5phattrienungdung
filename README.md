@@ -5,7 +5,18 @@ Bài tập Mobile App, React Native + Expo + TypeScript, backend MockAPI.io.
 
 ## 1. Chạy ứng dụng
 
-Yêu cầu Node.js 22.13+ hoặc bản LTS mới hơn, npm và điện thoại Android/iOS có Expo Go tương thích SDK 58 (hoặc Android Emulator).
+Yêu cầu Node.js 22.13+ hoặc bản LTS mới hơn, npm và điện thoại Android/iOS có Expo Go tương thích **SDK 57** (hoặc Android Emulator).
+
+### Nếu đã tải bản SDK 58 trước đó
+
+Tải lại mã nguồn mới nhất từ GitHub hoặc giải nén bản ZIP SDK 57 vào thư mục mới, mở terminal tại thư mục có `package.json`, sau đó chạy:
+
+```bash
+npm.cmd ci
+npx.cmd expo start --clear
+```
+
+Nếu terminal Expo cũ còn chạy, nhấn `Ctrl+C` để dừng trước khi khởi động bản mới. Quét mã QR mới bằng Expo Go hỗ trợ SDK 57. Không chỉ sao chép `package.json`: cần cả `package-lock.json` mới để cài đúng các thư viện tương thích.
 
 ```bash
 npm ci

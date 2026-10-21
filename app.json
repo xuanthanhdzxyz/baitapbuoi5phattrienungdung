@@ -25,6 +25,12 @@
       "favicon": "./assets/favicon.png",
       "output": "single"
     },
-    "plugins": ["expo-video", "expo-image", "expo-router", "expo-splash-screen"]
+    "plugins": [
+      "expo-video",
+      "expo-image",
+      "expo-router",
+      "expo-splash-screen",
+      "expo-status-bar"
+    ]
   }
 }
