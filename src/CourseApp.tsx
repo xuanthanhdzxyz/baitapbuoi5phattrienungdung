@@ -179,11 +179,19 @@ function CourseApp() {
         if (!active) return;
         setCourses(cs);
         setCategories(cats);
-        setFilter(previous => cats.some(c => c.id === previous) ? previous : "");
+        setFilter((previous) =>
+          cats.some((c) => c.id === previous) ? previous : "",
+        );
       })
-      .catch(e => { if (active) setError(message(e)); })
-      .finally(() => { if (active) setLoading(false); });
-    return () => { active = false; };
+      .catch((e) => {
+        if (active) setError(message(e));
+      })
+      .finally(() => {
+        if (active) setLoading(false);
+      });
+    return () => {
+      active = false;
+    };
   }, [ready, api]);
   useEffect(() => {
     const sub = BackHandler.addEventListener("hardwareBackPress", () => {
