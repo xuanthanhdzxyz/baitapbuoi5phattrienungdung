@@ -1,5 +1,22 @@
 # Kết quả kiểm tra — 21/10/2026
 
+## Cập nhật tương thích Expo Go SDK 57
+
+Đã chuyển dự án từ SDK 58 về SDK 57 theo phiên bản Expo Go của sinh viên. Bộ phiên bản hiện tại: Expo **57.0.30**, React Native **0.86.3**, React/React DOM **19.2.3**, Expo Router **57.0.28**, expo-video **57.0.5**. Những thư viện native và kiểu React được đồng bộ bằng `expo install --fix`; `package-lock.json` đã cập nhật đầy đủ.
+
+Các kiểm tra sau khi chuyển phiên bản đều đạt:
+
+- `npm run typecheck`, `npm run lint`.
+- `npm test`: **10/10** ca đạt.
+- `expo install --check`: **Dependencies are up to date**.
+- `npm ci --ignore-scripts --dry-run --no-audit`: lockfile hợp lệ.
+- `expo config --type public`: **sdkVersion = 57.0.0**, platforms = ios/android/web.
+- `expo export --platform android --platform ios --platform web --max-workers 2`: thành công cả ba nền tảng, có Hermes bundle Android và iOS.
+
+Chưa kiểm thử trực tiếp trên điện thoại của sinh viên. Khi dùng bản mới: dừng terminal cũ bằng Ctrl+C, tải lại mã nguồn, chạy `npm.cmd ci` rồi `npx.cmd expo start --clear` và quét QR mới bằng Expo Go hỗ trợ SDK 57. Hướng dẫn đã cập nhật trong README.
+
+## Kết quả kiểm tra chức năng
+
 Sinh viên: **Đào Xuân Thành_BIT240215**.
 
 | Hạng mục                  | Kết quả xác minh                                                                                                |
